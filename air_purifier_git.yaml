@@ -36,7 +36,7 @@ sensor:
     name: "Dust sensor"
     accuracy_decimals: 2
     unit_of_measurement: "%"
-    # "unit_of_measurement" must be set, otherways HA will show history like a "binary sensor", not line graph
+    # "unit_of_measurement" must be set, otherwise HA will show history like a "binary sensor", not line graph
 
 
 
