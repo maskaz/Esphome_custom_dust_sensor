@@ -1,7 +1,7 @@
 #include "esphome.h"
 class My_dust_Sensor : public PollingComponent, public Sensor {
  public:
-  My_dust_Sensor() : PollingComponent(10000) {}  // period between updates, here 10s
+  My_dust_Sensor() : PollingComponent(15000) {}  // period between updates, here 10s
   
 
   void setup() override {
@@ -30,13 +30,12 @@ class My_dust_Sensor : public PollingComponent, public Sensor {
     delayMicroseconds(40);             // delay
     digitalWrite(D6,HIGH);             // turn the LED off
     delayMicroseconds(9680);           // delay
-
+    //delay(1000);
     }
     
     value = value / numReadings;       // smoothing
-    value = value / 4;                 // smoothing
-    
-    value = value / 2;                 // end value divided by 2 to get more accurate data, this line should be change if you need more accurate data
+    value = 0.17 * value - 0.1;        // calculate value, regarding documentation for GP2Y1010AU0F sensor
+  
   
 
     publish_state(value);              // publish
