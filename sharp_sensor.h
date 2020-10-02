@@ -34,7 +34,7 @@ class My_dust_Sensor : public PollingComponent, public Sensor {
     }
     
     value = value / numReadings;       // smoothing
-    value = 0.17 * value - 0.1;        // calculate value, regarding documentation for GP2Y1010AU0F sensor
+    value = 0.17 * value - 0.1;        // calculate value (for GP2Y1010AU0F reads) 
   
   
 
